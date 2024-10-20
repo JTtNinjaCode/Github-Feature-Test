@@ -44,9 +44,10 @@ jobs:
       run: |
         echo "After build on linux and windows"
         date
-        echo "${{ github.server_url }}"
-        echo "${{ github.repository }}"
-        git clone "Repository URL is ${{ github.server_url }}/${{ github.repository }}"
+        echo "server url:${{ github.server_url }}"
+        echo "repository name: ${{ github.repository }}"
+        echo "full url: Repository URL is ${{ github.server_url }}/${{ github.repository }}"
+        git clone "${{ github.server_url }}/${{ github.repository }}"
         cd ${{ github.repository }}
         python3 send_email.py --subject "Test Subject" --body "This is the email body" --sender $EMAIL_SENDER --password $EMAIL_PASSWORD --recipients $EMAIL_RECEIVER
 # echo "${{ github.repository }}" 印出 repo 的名稱
