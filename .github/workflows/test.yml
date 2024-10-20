@@ -48,10 +48,12 @@ jobs:
         echo "repository name: ${{ github.repository }}"
         echo "full url: Repository URL is ${{ github.server_url }}/${{ github.repository }}"
         git clone "${{ github.server_url }}/${{ github.repository }}"
-        cd ${{ github.repository }}
+        REPO_NAME=$(basename ${{ github.repository }})
+        cd $REPO_NAME
         python3 send_email.py --subject "Test Subject" --body "This is the email body" --sender $EMAIL_SENDER --password $EMAIL_PASSWORD --recipients $EMAIL_RECEIVER
 # echo "${{ github.repository }}" 印出 repo 的名稱
 # echo "${{ github.server_url }}" 印出 github 的 url
+# REPO_NAME=$(basename ${{ github.repository }}) 命名一個 env，名稱是 github.repository 的後面名稱，要取得這名稱可透過 basename 這個指令
       env: # 跑這個 job 時，系統的環境變數是甚麼? 使用 key:value 表示
           EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }} # 引用 GitHub Secrets
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }} # 引用 GitHub Secrets
