@@ -10,7 +10,7 @@ on: # 指定何種事件發生時觸發 action，一個檔案裡面只會有一�
 # jobs 各自是並行的執行，但如果使用 needs，就可以變成循序的執行
 jobs:
   build_on_linux: # jobs 的名稱，自由命名
-    runs-on: ubuntu-latest # runner 的 image 是甚麼?
+    runs-on: ubuntu-latest # 指定 runner 的 image 是 ubuntu-latest
     # steps 表示要在這台 container 內執行哪些動作，以底下寫的順序循序執行
     steps:
       - name: Run a one-line script
@@ -29,6 +29,7 @@ jobs:
           echo "Hello2"
           Get-Date
   after_build_on_linux:
+    runs-on: ubuntu-latest
     needs: build_on_linux # 使用 needs 就可以讓 build_on_linux 執行完以後才接著執行 build_on_windows
     steps:
     - name: Run a multi-line script
