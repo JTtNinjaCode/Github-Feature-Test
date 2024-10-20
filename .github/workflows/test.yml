@@ -1,0 +1,30 @@
+on: # 指定何種事件發生時觸發 action，一個檔案裡面只會有一個 on，接著底下都是指這個 action 的觸發條件
+  workflow_dispatch: # 可手動觸發
+# push:
+#   branches: [ main ]  # 當 main 被 push 時觸發
+# pull_request:
+#   branches: [ main ] # 當 main 被送 PR 時觸發
+
+# 一個 jobs 跑在一個 runner 上
+# jobs 各自是並行的執行，但如果使用 needs 指令，就可以變成循序的執行
+jobs:
+  build_on_linux: # jobs 的名稱，自由命名
+    runs-on: ubuntu-latest # runner 的 image 是甚麼?
+    # steps 表示要在這台 container 內執行哪些動作，是循序執行的
+    steps:
+      - name: Run a one-line script
+        run: echo "Hello, world!" # 要跑的指令
+      - name: Run a multi-line script
+        run: |
+          echo "Hello1"
+          echo "Hello2"
+          date
+  build_on_windows: # jobs 的名稱，自由命名
+    runs-on: windows-latest # 跑在 windows 上
+    steps:
+      - name: run multi-line script
+        run: | # 接上 | 代表底下多行都是要執行的指令
+          echo "Hello1"
+          echo "Hello2"
+          Get-Date
+      
