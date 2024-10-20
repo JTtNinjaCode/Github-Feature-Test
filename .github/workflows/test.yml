@@ -36,4 +36,12 @@ jobs:
       run: |
         echo "After build on linux"
         date
+  after_build_on_linux_windows:
+    runs-on: ubuntu-latest
+    needs: [ build_on_linux, build_on_windows ] # 要 build_on_linux, build_on_windows 都執行完，才跑此 job
+    steps:
+    - name: Run a multi-line script
+      run: |
+        echo "After build on linux and windows"
+        date
       
