@@ -1,1 +1,15 @@
+# 這個檔案用來配置當人們點入 issues 頁面，創建 new issues 時會出現的選項頁面，會包含所有的 issue template，還可以使用 contact_links 來增加選項
+
+# 另外，create new issues 時，模板頁面的排序會以 issue template 的 yml 檔案名稱排序，如果你有排序的要求，請在 issue template 的檔案名稱前面加上數字編號，例如
+# 01-defulat-issue.yml
+# 02-bug-issue.yml
+# 03-typo-error-issue.yml
+
 blank_issues_enabled: false # 確保不能以空白的方式創建 issue，必須要使用 repo owner 所提供的 issue template，如此才能確保 issue 的格式
+contact_links:
+  - name: GitHub Community Support
+    url: https://github.com/orgs/community/discussions
+    about: Please ask and answer questions here.
+  - name: GitHub Security Bug Bounty
+    url: https://bounty.github.com/
+    about: Please report security vulnerabilities here.
