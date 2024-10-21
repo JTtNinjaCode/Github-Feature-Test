@@ -1,0 +1,8 @@
+# 在根目錄下創建 action.yml，才能上傳到 Marketplace
+name: "Update Action to Market Place" # 在 Marketplace 顯示的名稱
+author: "JTt Ninja Code" # 作者名稱
+description: "An example GitHub Action" # 在 Marketplace 顯示的描述
+# 在 Marketplace 顯示的圖案
+branding:
+  icon: 'award'
+  color: 'green'
