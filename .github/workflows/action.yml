@@ -1,6 +1,0 @@
-name: "My Custom Action"
-author: "JTt Ninja Code"
-description: "An example GitHub Action"
-branding:
-  icon: 'award'
-  color: 'green'
