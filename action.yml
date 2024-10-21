@@ -1,4 +1,5 @@
 # 在根目錄下創建 action.yml，才能上傳到 Marketplace
+# 上方應該會有可以點擊的按鈕可以 publish actions
 name: "Update Action to Market Place" # 在 Marketplace 顯示的名稱
 author: "JTt Ninja Code" # 作者名稱
 description: "An example GitHub Action" # 在 Marketplace 顯示的描述
