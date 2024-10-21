@@ -2,10 +2,7 @@ name: Action-Test # name 指定這個 action 的名稱，它會在 github action
 description: "Action's Description"
 author: JTt Ninja Code # action 的作者
 
-# action 的 icon 圖示
-branding:
-  icon: 'award'
-  color: 'green'
+
 
 on: # 指定何種事件發生時觸發 action，一個檔案裡面只會有一個 on，接著底下都是指這個 action 的觸發條件
   workflow_dispatch: # 可手動觸發
@@ -62,7 +59,15 @@ jobs:
 # echo "${{ github.repository }}" 印出 repo 的名稱
 # echo "${{ github.server_url }}" 印出 github 的 url
 # REPO_NAME=$(basename ${{ github.repository }}) 命名一個 env，名稱是 github.repository 的後面名稱，要取得這名稱可透過 basename 這個指令
-      env: # 跑這個 job 時，系統的環境變數是甚麼? 使用 key:value 表示
+      env: # 跑這個 job 時，系統的環境變數是甚麼? 使用 key:value 表示，這在 repo->setting->secrets and env 設定
           EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }} # 引用 GitHub Secrets
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }} # 引用 GitHub Secrets
           EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }} # 引用 GitHub Secrets
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITHUB_TOKEN 是特例，不需要去 setting，本身就會必定帶有此變數
+          # 這變數的用途是:
+
+# action 的 icon 圖示
+branding:
+  icon: 'award'
+  color: 'green'
