@@ -109,7 +109,7 @@ body:
 
   # 我自己額外寫的區塊，可以出現下拉選單
   - type: dropdown # 下拉式選單，預設會給一個 None 選項
-    id: favor language
+    id: favor_language
     attributes:
       label: "your favoriate programming language"
       description: "Fuck you Javascript"
@@ -119,7 +119,7 @@ body:
         - "HTML (Not Programming Language)"
 
   - type: checkboxes
-    id: issue type
+    id: issue_type
     attributes:
       label: issue_type(required)
       options:
