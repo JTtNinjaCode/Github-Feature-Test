@@ -1,13 +1,21 @@
+# 這段 issue template 是來自 imgui 的 issue template，我覺得這是不錯的範例
+# issue template 可以使用 yml 撰寫，也可以使用 markdown
+
+# 描述 issue template 的名稱以及描述，會顯示在 github issues 頁面下
 name: "Ask a question, report a bug, request a feature, etc."
 description: "Ask any question, discuss best practices, report a bug, request a feature."
+
+# issue 模板的主要內容都寫在 body 內
 body:
-  - type: markdown
-    attributes:
-      value: |
+  - type: markdown # 這個欄位的格式是甚麼? 是個 markdown 的段落，value 內容可使用 markdown 語法
+    attributes: # 該欄位的屬性
+      value: | # 文字內容
         FOR FIRST-TIME USERS ISSUES COMPILING/LINKING/RUNNING or LOADING FONTS, please use [GitHub Discussions](https://github.com/ocornut/imgui/discussions)
         For anything else: we are happy to use 'GitHub Issues' for many types of open-ended questions. We are encouraging 'Issues' becoming a large, centralized and cross-referenced database of Dear ImGui contents.
 
         Be mindful that messages are being sent to the e-mail box of "Watching" users. Try to proof-read your messages before sending them. Edits are not seen by those users.
+  
+  
   - type: markdown
     attributes:
       value: |
@@ -18,15 +26,18 @@ body:
         - I have searched [Github Issues and PR](https://github.com/ocornut/imgui/issues?q=) for discussion of similar topics.
 
         ----
-  - type: input
-    id: specs_version
+        
+  - type: input # 輸入框
+    id: specs_version # 用途?
     attributes:
-      label: "Version/Branch of Dear ImGui:"
-      description: "(please specify if you have made substantial modifications to your copy)"
-      value: "Version 1.XX, Branch: XXX (master/docking/etc.)"
-      placeholder: "Version 1.XX, Branch: XXX (master/docking/etc.)"
-    validations:
+      label: "Version/Branch of Dear ImGui:" # 上面附加的 label 文字
+      description: "(please specify if you have made substantial modifications to your copy)" # 還有 description
+      value: "Version 1.XX, Branch: XXX (master/docking/etc.)" # 預設填入的文字
+      placeholder: "Version 1.XX, Branch: XXX (master/docking/etc.)" # 背景淺灰色的 placeholder 文字
+    validations: # 必填
       required: true
+
+      
   - type: input
     id: specs_backend
     attributes:
@@ -36,6 +47,7 @@ body:
       placeholder: "imgui_impl_XXX.cpp  + imgui_impl_XXX.cpp or n/a"
     validations:
       required: true
+      
   - type: input
     id: specs_compiler_os
     attributes:
@@ -43,6 +55,7 @@ body:
       placeholder: "e.g. Windows 11 + MSVC 2022, macOS + Clang 12, Linux + GCC etc."
     validations:
       required: true
+      
   - type: textarea
     id: specs_full
     attributes:
@@ -51,6 +64,7 @@ body:
         (If you can run, you may go to 'Demo->Tools->About Dear ImGui->Config/Build Info' to obtain detailed information that you can paste here)
     validations:
       required: false
+      
   - type: textarea
     id: issue_description
     attributes:
@@ -62,6 +76,7 @@ body:
         XXX _(please provide as much context as possible)_
     validations:
       required: true
+      
   - type: textarea
     id: screenshots
     attributes:
@@ -70,12 +85,14 @@ body:
       placeholder: "(You can drag files here)"
     validations:
       required: false
+      
   - type: textarea
     id: repro_code
     attributes:
       label: "Minimal, Complete and Verifiable Example code:"
+      # decription 當然也可以填入 markdown
       description: "Provide an [MCVE](https://stackoverflow.com/help/mcve) to demonstrate your problem. An ideal submission includes a small piece of code that anyone can paste into one of the examples applications (examples/*/main.cpp) or the demo (imgui_demo.cpp) to understand and reproduce it. Narrowing your problem to its shortest and purest form is the easiest way to understand it, explain it and fix it. Please test your shortened code to ensure it exhibits the problem. Often while creating the MCVE you will solve the problem! Many questions that are missing a standalone verifiable example are missing the actual cause of their issue in the description, which ends up wasting everyone's time."
-      value: |
+      value: | # 預設填入的文字
         ```cpp
         // Here's some code anyone can copy and paste to reproduce your issue
         ImGui::Begin("Example Bug");
@@ -84,6 +101,7 @@ body:
         ```
     validations:
       required: false
+      
   - type: markdown
     attributes:
       value: |
