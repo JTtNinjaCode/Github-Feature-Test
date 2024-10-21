@@ -64,4 +64,5 @@ jobs:
           EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }} # 引用 GitHub Secrets
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # GITHUB_TOKEN 是特例，不需要去 setting，本身就會必定帶有此變數
-          # 這變數的用途是:
+          # 並且，每次呼叫 action 時，這個 GITHUB_ACTION 都是隨機的，有了這個變數
+          # 才有存取這個 Repo 的權限
