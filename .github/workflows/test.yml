@@ -2,6 +2,8 @@ name: "Action-Test" # name 指定這個 action 的名稱，它會在 github acti
 
 on: # 指定何種事件發生時觸發 action，一個檔案裡面只會有一個 on，接著底下都是指這個 action 的觸發條件
   workflow_dispatch: # 可手動觸發
+  repository_dispatch: # 被 fork 的時候觸發
+    types: [forked]
 # push:
 #   branches: [ main ]  # 當 main 被 push 時觸發
 # pull_request:
