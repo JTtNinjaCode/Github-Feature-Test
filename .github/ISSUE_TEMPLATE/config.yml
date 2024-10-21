@@ -1,0 +1,1 @@
+blank_issues_enabled: false # 確保不能以空白的方式創建 issue，必須要使用 repo owner 所提供的 issue template，如此才能確保 issue 的格式
