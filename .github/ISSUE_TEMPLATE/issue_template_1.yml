@@ -119,7 +119,7 @@ body:
         - "HTML (Not Programming Language)"
 
   - type: checkboxes
-    id: issue_type
+    id: issue type
     attributes:
       label: issue_type(required)
       options:
