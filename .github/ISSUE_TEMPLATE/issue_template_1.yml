@@ -119,13 +119,8 @@ body:
         - "HTML (Not Programming Language)"
 
   - type: checkboxes
-    id: issue_type
+    id: read_issue_policy
     attributes:
-      label: issue_type(required)
       options:
-        - label: Bug Report
-          required: true
-        - label: Feature Request
-          required: true
-        - label: Question
+        - label: "I have read issue policy."
           required: true
