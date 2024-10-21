@@ -117,11 +117,12 @@ body:
         - "C"
         - "Python"
         - "HTML (Not Programming Language)"
-
+  # checkbox 範例，我已經閱讀 Code of Conduct
   - type: checkboxes
-    id: read_issue_policy
+    id: terms
     attributes:
-      label: "check:"
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com). 
       options:
-        - label: "I have read issue policy."
+        - label: "I agree to follow this project's Code of Conduct"
           required: true
