@@ -106,3 +106,14 @@ body:
     attributes:
       value: |
         Thank you for taking the time to read prerequisites, filling this template and double-checking your message and your code!
+
+  # 我自己額外寫的區塊，可以出現下拉選單
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: "your favoriate programming language"
+      description: "Fuck you Javascript"
+      options:
+        - "C"
+        - "Python"
+        - "HTML (Not Programming Language)"
