@@ -1,6 +1,12 @@
 name: Action-Test # name 指定這個 action 的名稱，它會在 github actions 的頁面顯示
 description: "Action's Description"
-author: "JTt Ninja Code"
+author: JTt Ninja Code # action 的作者
+
+# action 的 icon 圖示
+branding:
+  icon: 'award'
+  color: 'green'
+
 on: # 指定何種事件發生時觸發 action，一個檔案裡面只會有一個 on，接著底下都是指這個 action 的觸發條件
   workflow_dispatch: # 可手動觸發
 # push:
