@@ -120,7 +120,6 @@ body:
 
   - type: checkboxes
     id: read_issue_policy
-    description: "you must read it!"
     attributes:
       label: "check:"
       options:
