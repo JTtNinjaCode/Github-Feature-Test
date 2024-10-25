@@ -56,6 +56,7 @@ jobs:
         REPO_NAME=$(basename ${{ github.repository }})
         cd $REPO_NAME
         python3 mail.py --subject "Test Subject" --body "This is the email body" --sender $EMAIL_SENDER --password $EMAIL_PASSWORD --recipients $EMAIL_RECEIVER
+# cat $GITHUB_EVENT_PATH，github 以特定事件觸發時，會把虛擬環境命名一個 env 紀錄存有 event 資訊的 json 檔案的路徑
 # echo "${{ github.repository }}" 印出 repo 的名稱
 # echo "${{ github.server_url }}" 印出 github 的 url
 # REPO_NAME=$(basename ${{ github.repository }}) 命名一個 env，名稱是 github.repository 的後面名稱，要取得這名稱可透過 basename 這個指令
