@@ -48,6 +48,7 @@ jobs:
       run: |
         echo "After build on linux and windows"
         date
+        cat $GITHUB_EVENT_PATH
         echo "server url:${{ github.server_url }}"
         echo "repository name: ${{ github.repository }}"
         echo "full url: Repository URL is ${{ github.server_url }}/${{ github.repository }}"
