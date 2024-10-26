@@ -10,6 +10,11 @@ on: # 指定何種事件發生時觸發 action，一個檔案裡面只會有一�
 # schedule: # 你也可以設定成定時跑
 #   - cron: "0 */8 * * *" # update every 8 hours
 
+
+# repository_dispatch 允許以 api 呼叫的方式觸發
+  repository_dispatch:
+    types: [deploy]
+
 # 一個 jobs 跑在一個 runner 上
 # jobs 各自是並行的執行，但如果使用 needs，就可以變成循序的執行
 jobs:
