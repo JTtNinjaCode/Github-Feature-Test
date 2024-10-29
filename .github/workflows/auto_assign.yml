@@ -16,4 +16,4 @@ jobs:
       # gh 指令要執行，需要設定一些環境變數
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh issue edit ${{ github.event.issue.number }} --add-assignee "JTtNinjaCode"
+        run: gh issue edit ${{ github.event.issue.number }} --add-assignee "JTtNinjaCode" -repo "JTtNinjaCode/Github-Feature-Test"
