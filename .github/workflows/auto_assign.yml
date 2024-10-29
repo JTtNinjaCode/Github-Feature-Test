@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install the gh cli
-        uses: ksivamuthu/actions-setup-gh-cli@2.24.3
+        uses: ksivamuthu/actions-setup-gh-cli@v3
         with:
           version: 2.24.3
       - name: Assign specific user to issue
