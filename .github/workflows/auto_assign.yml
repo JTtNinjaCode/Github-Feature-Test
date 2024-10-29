@@ -1,0 +1,17 @@
+name: Auto-Assign Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  assign_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up GitHub CLI
+        uses: actions/setup-gh@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Assign specific user to issue
+        run: gh issue edit ${{ github.event.issue.number }} --add-assignee "JTtNinjaCode"
