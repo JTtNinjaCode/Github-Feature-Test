@@ -17,5 +17,4 @@ jobs:
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh auth refresh -s project --hostname github.com
           gh issue edit ${{ github.event.issue.number }} --add-assignee "JTtNinjaCode" --repo "JTtNinjaCode/Github-Feature-Test"
