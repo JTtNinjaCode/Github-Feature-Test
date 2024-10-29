@@ -8,10 +8,9 @@ jobs:
   assign_issue:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up GitHub CLI
-        uses: actions/setup-gh@v1
+      - name: Install the gh cli
+        uses: ksivamuthu/actions-setup-gh-cli@<VERSION>
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
+          version: 2.24.3
       - name: Assign specific user to issue
         run: gh issue edit ${{ github.event.issue.number }} --add-assignee "JTtNinjaCode"
