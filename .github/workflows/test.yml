@@ -15,6 +15,10 @@ on: # 指定何種事件發生時觸發 action，一個檔案裡面只會有一�
   repository_dispatch:
     types: [deploy, hello] # 觸發的 API 名撐，可自定義
 
+# 環境變數可以在全域設定，讓所有 job 都有環境變數，也可以在特定 job 內設定 env
+# env:
+#   DAY_OF_WEEK: Monday
+
 # 一個 jobs 跑在一個 runner 上
 # jobs 各自是並行的執行，但如果使用 needs，就可以變成循序的執行
 jobs:
